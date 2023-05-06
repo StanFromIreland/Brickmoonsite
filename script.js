@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 const cryptocurrency = 'brick';
 const currency = 'usd';
 
@@ -12,7 +13,7 @@ axios.get(url)
     console.error(error);
   });
 
-
+});
 
 
 
