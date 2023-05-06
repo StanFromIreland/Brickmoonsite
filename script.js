@@ -7,7 +7,7 @@ const url = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptocurrency}
 axios.get(url)
   .then(response => {
     const price = response.data[cryptocurrency][currency];
-    document.getElementById('price').innerText = `$${price.toFixed(2)}`;
+    document.getElementById('price').innerText = `$${price.toFixed(8)}`;
   })
   .catch(error => {
     console.error(error);
