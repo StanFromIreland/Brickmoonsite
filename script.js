@@ -1,18 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-const cryptocurrency = 'brick';
-const currency = 'usd';
+const coinId = 'brick';
 
-const url = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptocurrency}&vs_currencies=${currency}`;
+function displayPrice() {
+  fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`)
+    .then(response => response.json())
+    .then(data => {
+      const price = data[coinId].usd;
+      const priceElement = document.querySelector('.price');
+      priceElement.textContent = '$' + price.toFixed(8);
+    })
+    .catch(error => console.error(error));
+}
 
-axios.get(url)
-  .then(response => {
-    const price = response.data[cryptocurrency][currency];
-    document.getElementById('price').innerText = `$${price.toFixed(8)}`;
-  })
-  .catch(error => {
-    console.error(error);
-  });
 
+setInterval(displayPrice, 30000);
 });
 
 
