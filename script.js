@@ -1,4 +1,4 @@
-
+const coinId = 'brick';
 const chartContainer = document.querySelector('#chart-container');
 const menuButton = document.querySelector('#menu-button');
 const menu = document.querySelector('#menu');
@@ -13,7 +13,8 @@ function displayPrice() {
       newPriceElement.textContent = 'Current Price: $' + price.toFixed(8);
       priceElement.parentNode.insertBefore(newPriceElement, priceElement);
       priceElement.remove();
-    });
+    })
+    .catch(error => console.log('Error fetching price:', error));
 }
 
 function displayChart(data) {
@@ -36,7 +37,7 @@ function displayChart(data) {
     }
   };
 
-  const chart = new ApexCharts(document.querySelector('#chart-container'), options);
+  const chart = new ApexCharts(chartContainer, options);
   chart.render();
 }
 
@@ -44,7 +45,8 @@ setInterval(displayPrice, 30000);
 
 fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=7&interval=daily`)
   .then(response => response.json())
-  .then(data => displayChart(data));
+  .then(data => displayChart(data))
+  .catch(error => console.log('Error fetching chart data:', error));
 
 function toggleMenu() {
   menu.classList.toggle('active');
