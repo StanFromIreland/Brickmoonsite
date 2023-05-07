@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const chartContainer = document.querySelector('#chart-container');
   const menuButton = document.querySelector('#menu-button');
   const menu = document.querySelector('#menu');
-  
+
   function displayPrice() {
     fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=7&interval=daily`)
       .then(response => response.json())
@@ -39,15 +39,28 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   setInterval(displayPrice, 30000);
-  
+
   fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=7&interval=daily`)
     .then(response => response.json())
     .then(data => displayChart(data));
-  
+
   function toggleMenu() {
     menu.classList.toggle('active');
     menuButton.classList.toggle('active');
   }
-  
+
+  function closeMenu() {
+    if (menu.classList.contains('active')) {
+      menu.classList.remove('active');
+      menuButton.classList.remove('active');
+    }
+  }
+
   menuButton.addEventListener('click', toggleMenu);
+
+  document.addEventListener('click', function(event) {
+    if (!menu.contains(event.target) && menu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
 });
