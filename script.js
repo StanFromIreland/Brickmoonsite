@@ -13,7 +13,7 @@ function displayPrice() {
     .catch(error => console.error(error));
 }
 
-setInterval(displayPrice, 30000);
+setInterval(displayPrice, 10000);
 
 document.addEventListener("DOMContentLoaded", function() {
 });
