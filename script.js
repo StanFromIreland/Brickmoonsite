@@ -4,7 +4,7 @@ const menuButton = document.querySelector('#menu-button');
 const menu = document.querySelector('#menu');
 
 function displayPrice() {
-  fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=7&interval=daily`)
+  fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=90&interval=daily`)
     .then(response => response.json())
     .then(data => {
       const price = data.prices[data.prices.length - 1][1];
