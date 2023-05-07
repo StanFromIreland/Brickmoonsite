@@ -22,19 +22,34 @@ header {
   font-weight: bold;
 }
 
-.menu {
+.menu-container {
   position: fixed;
   top: 0;
-  left: -200px; /* menu is off-screen by default */
+  left: 0;
   height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: none;
+}
+
+.menu-container.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  height: 200px;
   width: 200px;
   background-color: #333;
   padding: 1rem;
-  transition: left 0.2s ease-out; /* animate menu slide-in */
+  transition: transform 0.2s ease-out;
+  transform: translate(-200px, 0);
 }
 
 .menu.active {
-  left: 0; /* slide menu in when active */
+  transform: translate(0, 0);
 }
 
 #menu-button {
@@ -70,4 +85,3 @@ header {
 #menu-button.active .line:nth-of-type(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
-
