@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   const coinId = 'brick';
-  const chartContainer = document.querySelector('#chart');
+  const chartContainer = document.querySelector('#chart-container');
 
   function displayPrice() {
     fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=7&interval=daily`)
@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   setInterval(displayPrice, 30000);
+  
+  fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=7&interval=daily`)
+    .then(response => response.json())
+    .then(data => displayChart(data));
 });
-
-
-
