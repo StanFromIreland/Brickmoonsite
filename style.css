@@ -55,7 +55,7 @@ header {
 #menu-button {
   position: fixed;
   top: 0.5rem;
-  right: 0.5rem;
+  left: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
