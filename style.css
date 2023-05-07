@@ -55,6 +55,7 @@ header {
 #menu-button {
   position: fixed;
   top: 0.5rem;
+  right: unset !important;
   left: 0.5rem;
   display: flex;
   flex-direction: column;
