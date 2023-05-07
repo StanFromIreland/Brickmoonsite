@@ -1,4 +1,4 @@
-const coinId = 'brick';
+
 const chartContainer = document.querySelector('#chart-container');
 const menuButton = document.querySelector('#menu-button');
 const menu = document.querySelector('#menu');
