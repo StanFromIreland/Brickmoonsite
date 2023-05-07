@@ -1,7 +1,9 @@
 const coinId = 'brick';
 
 function displayPrice() {
-  fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`)
+  const timestamp = new Date().getTime(); 
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd&_=${timestamp}`;
+  fetch(url)
     .then(response => response.json())
     .then(data => {
       const price = data[coinId].usd;
@@ -11,10 +13,13 @@ function displayPrice() {
     .catch(error => console.error(error));
 }
 
-
 setInterval(displayPrice, 30000);
 
 document.addEventListener("DOMContentLoaded", function() {
-
 });
+
+
+
+
+
 
