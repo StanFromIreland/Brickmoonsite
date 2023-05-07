@@ -65,22 +65,11 @@ header {
 }
 
 #menu-button img {
-  width: 100%;
-  height: 100%;
+  width: 1000%;
+  height: 1000%;
   border-radius: 50%;
   background-image: url("https://stanfromireland.github.io/Brickmoonsite/images/communityIcon-modified.png");
 }
-Make sure to add the circular image within the #menu-button tag in HTML:
-
-css
-Copy code
-<button id="menu-button">
-  <img src="path/to/image.jpg" alt="menu button">
-</button>
-
-
-
-
 
 
 
