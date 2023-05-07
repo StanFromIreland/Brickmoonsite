@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const price = data.prices[data.prices.length - 1][1];
         const priceElement = document.querySelector('.price');
         priceElement.textContent = '$' + price.toFixed(8);
-        displayChart(data); // Call the displayChart() function with the fetched data
       });
   }
 
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     };
 
-    const chart = new ApexCharts(chartContainer, options); // Render the chart to the correct container
+    const chart = new ApexCharts(document.querySelector('#chart-container'), options);
     chart.render();
   }
 
