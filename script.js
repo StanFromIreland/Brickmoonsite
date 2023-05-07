@@ -9,7 +9,10 @@ function displayPrice() {
     .then(data => {
       const price = data.prices[data.prices.length - 1][1];
       const priceElement = document.querySelector('.price');
-      priceElement.textContent = '$' + price.toFixed(8);
+      const newPriceElement = document.createElement('span');
+      newPriceElement.textContent = 'Current Price: $' + price.toFixed(8);
+      priceElement.parentNode.insertBefore(newPriceElement, priceElement);
+      priceElement.remove();
     });
 }
 
