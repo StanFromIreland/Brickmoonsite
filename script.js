@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
 const coinId = 'brick';
 
 function displayPrice() {
@@ -12,9 +11,10 @@ function displayPrice() {
     .catch(error => console.error(error));
 }
 
-
+// Update the price every 30 seconds
 setInterval(displayPrice, 30000);
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Code to execute after the DOM is fully loaded
 });
-
-
 
