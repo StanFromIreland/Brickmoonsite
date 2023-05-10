@@ -79,19 +79,13 @@ ul.pagination li.current a {}a {outline:0;border:0}
 
 .centered-box {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px; /* adjust height as needed */
+  height: 200px; /* Needs adjustment */
 }
 
-.word-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.word {
+.centered-box .word {
   font-size: 24px;
   font-weight: bold;
   margin: 10px;
@@ -99,3 +93,4 @@ ul.pagination li.current a {}a {outline:0;border:0}
   background-color: #f2f2f2;
   border-radius: 5px;
 }
+
