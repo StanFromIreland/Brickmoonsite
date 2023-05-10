@@ -78,14 +78,11 @@ ul.pagination li a {padding:9px 0 0 9px;display:block}
 ul.pagination li.current a {}a {outline:0;border:0}
 
 .centered-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px; /* Needs adjustment */
+  height: 200px;
+  text-align: center;
 }
 
-.centered-box .word {
+.word {
   font-size: 24px;
   font-weight: bold;
   margin: 10px;
@@ -93,4 +90,5 @@ ul.pagination li.current a {}a {outline:0;border:0}
   background-color: #f2f2f2;
   border-radius: 5px;
 }
+
 
