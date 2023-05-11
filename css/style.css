@@ -78,42 +78,35 @@ ul.pagination li a {padding:9px 0 0 9px;display:block}
 ul.pagination li.current a {}a {outline:0;border:0}
 
 /* INFO box*/
-body {
-  padding: 0 20px;
-}
-
-.container {
-  margin-top: 1cm;
+.centered-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.col {
-  margin: 10px;
-}
-
-.box {
+  align-items: center;
+  height: auto;
+  margin: 1cm auto 0;
+  padding: 10px;
   background-color: #f2f2f2;
   border-radius: 5px;
-  text-align: center;
+}
+
+.centered-box .word {
+  width: calc(33.33% - 20px);
+  margin: 10px;
   padding: 10px;
+  text-align: center;
 }
 
-.small-line {
-  font-size: 16px;
+.centered-box .small {
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.big-line {
+.centered-box .big {
   font-size: 24px;
   font-weight: bold;
 }
+
 
 
 
