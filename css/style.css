@@ -78,7 +78,7 @@ ul.pagination li a {padding:9px 0 0 9px;display:block}
 ul.pagination li.current a {}a {outline:0;border:0}
 
 /* INFO box*/
-/* INFO box */
+
 .centered-box {
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +91,16 @@ ul.pagination li.current a {}a {outline:0;border:0}
   border-radius: 5px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.word img {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .centered-box .word {
