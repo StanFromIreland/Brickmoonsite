@@ -77,29 +77,43 @@ ul.pagination li {width:183px;height:99px;margin-bottom:22px;background:url(../i
 ul.pagination li a {padding:9px 0 0 9px;display:block}
 ul.pagination li.current a {}a {outline:0;border:0}
 
+/* INFO box*/
 body {
   padding: 0 20px;
 }
 
-.centered-box {
+.container {
+  margin-top: 1cm;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin-top: 1cm;
-  height: 200px;
-  max-width: 80%;
-  background-color: #f2f2f2;
-  border-radius: 5px;
 }
 
-.centered-box .word {
-  font-size: 24px;
-  font-weight: bold;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
   margin: 10px;
+}
+
+.box {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
   padding: 10px;
 }
 
+.small-line {
+  font-size: 16px;
+}
+
+.big-line {
+  font-size: 24px;
+  font-weight: bold;
+}
 
 
 
