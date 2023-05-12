@@ -107,7 +107,7 @@
 			fetch("https://api.coingecko.com/api/v3/coins/brick")
   			.then(response => response.json())
   			.then(data => {
-    			const holders = data.community_data.community_data.holders;
+    			const holders = data.market_data.total_holders;
 
     			const holdersElement = document.getElementById('t-h');
 				holdersElement.innerText = `${holders}`;
