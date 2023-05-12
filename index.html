@@ -98,7 +98,26 @@
   <div class="word">
 	  <img src="icon3.jpg" alt="">
     <div class="small">Holders</div>
-    <div class="big">000000</div>
+    <div class="big" id="t-h">000000</div>
+
+	<script>
+
+		//Get Total Holders function
+		function updateTotalHolders() {
+			fetch("https://api.coingecko.com/api/v3/coins/brick")
+  			.then(response => response.json())
+  			.then(data => {
+    			const holders = data.community_data.community_data.holders;
+
+    			const holdersElement = document.getElementById('t-h');
+				holdersElement.innerText = `${holders}`;
+  		})
+
+    .catch(error => console.error(error));
+
+	}
+	setInterval(updateTotalHolders, 10000);
+	</script>
   </div>
 
   <div class="word">
