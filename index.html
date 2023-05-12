@@ -83,9 +83,10 @@
  	.then(response => response.json())
   	.then(data => {
     	const marketCap = data.market_data.market_cap.usd;
+		const formattedMarketCap = marketCap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
     	const marketCapElement = document.getElementById('m-c');
-		marketCapElement.innerText = `$${marketCap.toFixed(6)}`;
+		marketCapElement.innerText = `$${formattedMarketCap}`;
  	 })
  	 .catch(error => console.error(error));
 
