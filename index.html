@@ -101,23 +101,32 @@
     <div class="big" id="t-h">000000</div>
 
 	<script>
-
-		//Get Total Holders function
+		// Get total holders function
 		function updateTotalHolders() {
-			fetch("https://api.coingecko.com/api/v3/coins/brick")
-  			.then(response => response.json())
-  			.then(data => {
-    			const holders = data.market_data.total_holders;
-
-    			const holdersElement = document.getElementById('t-h');
-				holdersElement.innerText = `${holders}`;
-  		})
-
-    .catch(error => console.error(error));
-
-	}
-	setInterval(updateTotalHolders, 10000);
-	</script>
+		  fetch("https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0x6dcb98f460457fe4952e12779ba852f82ecc62c1")
+			.then(response => response.json())
+			.then(data => {
+			  const tokenSupply = data.result;
+			  fetch(`https://api.etherscan.io/api?
+			  module=token
+			  &action=gettokenholdercount
+			  &contractaddress=0x6dcb98f460457fe4952e12779ba852f82ecc62c1
+			  &tag=latest
+			  &apikey=3NIYNGDD7QRNU1JPFFMMQWEZ2SADKFUZY1`)
+				.then(response => response.json())
+				.then(data => {
+				  const holders = data.result;
+				  const holdersElement = document.getElementById('t-h');
+				  holdersElement.innerText = `${holders}`;
+				})
+				.catch(error => console.error(error));
+			})
+			.catch(error => console.error(error));
+		}
+		
+		setInterval(updateTotalHolders, 10000);
+	  </script>
+	  
   </div>
 
   <div class="word">
