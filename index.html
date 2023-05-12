@@ -73,7 +73,25 @@
   <div class="word">
 	  <img src="images/icon2.jpg" alt="">
     <div class="small">Market Cap</div>
-    <div class="big">$0000000</div>
+    <div class="big" id="m-c">$0000000</div>
+
+	<script>
+	// Function to Update Market Cap
+	
+	function updateMarketCap() {
+	fetch("https://api.coingecko.com/api/v3/coins/brick")
+ 	.then(response => response.json())
+  	.then(data => {
+    	const marketCap = data.market_data.market_cap.usd;
+
+    	const marketCapElement = document.getElementById('m-c');
+		marketCapElement.innerText = `$${marketCap.toFixed(6)}`;
+ 	 })
+ 	 .catch(error => console.error(error));
+
+	}
+  	setInterval(updateMarketCap, 10000);
+	</script>
   </div>
 
   <div class="word">
@@ -99,7 +117,7 @@
     <div class="small">Distribution</div>
     <div class="big">??D ??H ??M</div>
   </div>
-  
+
 </div>
 
 
