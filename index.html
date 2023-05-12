@@ -73,7 +73,7 @@
   <div class="word">
 	  <img src="images/icon2.jpg" alt="">
     <div class="small">Market Cap</div>
-    <div class="big" id="m-c">$0000000</div>
+    <div class="big" id="m-c">$0,000,000.00</div>
 
 	<script>
 	// Function to Update Market Cap
@@ -86,7 +86,7 @@
 		const formattedMarketCap = marketCap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
     	const marketCapElement = document.getElementById('m-c');
-		marketCapElement.innerText = `$${formattedMarketCap}`;
+		marketCapElement.innerText = `${formattedMarketCap}`;
  	 })
  	 .catch(error => console.error(error));
 
