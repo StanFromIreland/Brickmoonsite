@@ -18,6 +18,8 @@
 <script type="text/javascript" src="js/tabs.js"></script>
 <script type="text/javascript" src="js/jquery.faded.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <!--[if lt IE 7]>
 		 <link rel="stylesheet" href="css/ie/ie6.css" type="text/css" media="screen">
 		 <script type="text/javascript" src="js/ie_png.js"></script>
@@ -149,6 +151,68 @@
 
 </div>
 
+  <div class="chart-container">
+	<canvas id="price-chart"></canvas>
+
+	<script>
+		// Function to fetch price data for the last 7 days
+		async function fetchPriceData() {
+		  const now = new Date();
+		  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+		  const apiURL = `https://api.coingecko.com/api/v3/coins/brick/market_chart/range?vs_currency=usd&from=${sevenDaysAgo.getTime() / 1000}&to=${now.getTime() / 1000}`;
+	  
+		  try {
+			const response = await fetch(apiURL);
+			const data = await response.json();
+			const prices = data.prices;
+	  
+			const chartData = prices.map(([timestamp, price]) => ({
+			  x: new Date(timestamp),
+			  y: price
+			}));
+	  
+			// Create the chart
+			const ctx = document.getElementById('price-chart').getContext('2d');
+			new Chart(ctx, {
+			  type: 'line',
+			  data: {
+				datasets: [{
+				  label: 'Price',
+				  data: chartData,
+				  backgroundColor: 'rgba(75, 192, 192, 0.2)',
+				  borderColor: 'rgba(75, 192, 192, 1)',
+				  borderWidth: 1
+				}]
+			  },
+			  options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+				  x: {
+					type: 'time',
+					time: {
+					  unit: 'day',
+					  tooltipFormat: 'll'
+					}
+				  },
+				  y: {
+					title: {
+					  display: true,
+					  text: 'Price (USD)'
+					}
+				  }
+				}
+			  }
+			});
+		  } catch (error) {
+			console.error(error);
+		  }
+		}
+	  
+		fetchPriceData();
+	  </script>
+	  
+  </div>
 
 
 </div>

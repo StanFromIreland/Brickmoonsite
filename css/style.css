@@ -122,6 +122,13 @@ ul.pagination li.current a {}a {outline:0;border:0}
   margin-left: 10px;
 }
 
+/* Brick price chart index.html */
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 
 
 
