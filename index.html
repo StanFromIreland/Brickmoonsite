@@ -1,222 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>brickmoon.io</title>
-<meta charset="utf-8">
-<meta name="description" content="BRICK 4 life" />
-<meta name="keywords" content="put, your, keyword, here" />
+  <title>brickmoon.io</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BRICK 4 life" />
+  <meta name="keywords" content="put, your, keyword, here" />
 
-<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
-<script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script.js"></script>
-<script type="text/javascript" src="js/cufon-yui.js"></script>
-<script type="text/javascript" src="js/cufon-replace.js"></script>
-<script type="text/javascript" src="js/AG_Foreigner_Light-Plain_400.font.js"></script>
-<script type="text/javascript" src="js/Myriad_Pro_400.font.js"></script>
-<script type="text/javascript" src="js/tabs.js"></script>
-<script type="text/javascript" src="js/jquery.faded.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script.js"></script>
+  <script type="text/javascript" src="js/cufon-yui.js"></script>
+  <script type="text/javascript" src="js/cufon-replace.js"></script>
+  <script type="text/javascript" src="js/AG_Foreigner_Light-Plain_400.font.js"></script>
+  <script type="text/javascript" src="js/Myriad_Pro_400.font.js"></script>
+  <script type="text/javascript" src="js/tabs.js"></script>
+  <script type="text/javascript" src="js/jquery.faded.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!--[if lt IE 7]>
-		 <link rel="stylesheet" href="css/ie/ie6.css" type="text/css" media="screen">
-		 <script type="text/javascript" src="js/ie_png.js"></script>
-		 <script type="text/javascript">
-				ie_png.fix('.png, ul.tabs li a, ul.tabs li a span, ul.tabs li a span, figure img');
-		 </script>
-<![endif]-->
-<!--[if lt IE 9]>
-		<script type="text/javascript" src="js/html5.js"></script>
-	<![endif]-->
+  <!--[if lt IE 7]>
+     <link rel="stylesheet" href="css/ie/ie6.css" type="text/css" media="screen">
+     <script type="text/javascript" src="js/ie_png.js"></script>
+     <script type="text/javascript">
+        ie_png.fix('.png, ul.tabs li a, ul.tabs li a span, ul.tabs li a span, figure img');
+     </script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+  <![endif]-->
 </head>
+
 <body id="page1">
-<div class="wrap"><div class="ic"><!-- HLinks --></div>
-	 <!-- header -->
-	 <header>
-			<div class="container">
-				 <h1><a href="index.html">brickmoon.io</a></h1>
-				 <nav>
-						<ul>
-							 <li><a href="index.html" class="active"><span><span>Home</span></span></a></li>
-							 <li><a href="about-us.html"><span><span>About</span></span></a></li>
-							 <li><a href="trends.html"><span><span>Trends</span></span></a></li>
-							 <li><a href="https://guides.brickmoon.io" target="_blank"><span><span>Guides</span></span></a></li>
-							 <li><a href="support-us.html"><span><span>Support Us</span></span></a></li>
-						</ul>
-				 </nav>
-			 </div>
-	 </header>
+  <div class="wrap">
+    <div class="ic"><!-- HLinks --></div>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <h1><a href="index.html">brickmoon.io</a></h1>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active"><span><span>Home</span></span></a></li>
+            <li><a href="about-us.html"><span><span>About</span></span></a></li>
+            <li><a href="trends.html"><span><span>Trends</span></span></a></li>
+            <li><a href="https://guides.brickmoon.io" target="_blank"><span><span>Guides</span></span></a></li>
+            <li><a href="support-us.html"><span><span>Support Us</span></span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<div class="centered-box">
-	<div class="word">
-		<img src="icon1.jpg" alt="">
-		<div class="small">Current Price</div>
-		<div class="big" id="c-p">$0.0000000</div>
-	  
-		<script>
-		  // Function to update the price
-		  function updatePrice() {
-			fetch("https://api.coingecko.com/api/v3/simple/price?ids=brick&vs_currencies=usd")
-			  .then(response => response.json())
-			  .then(data => {
-				const price = data.brick.usd;
-	  
-				const priceElement = document.getElementById('c-p');
-				priceElement.innerText = `$${price.toFixed(7)}`;
-			  })
-			  .catch(error => console.error(error));
-		  }
-		  setInterval(updatePrice, 5000);
-		</script>
-	  </div>
-	  
-  <div class="word">
-	  <img src="images/icon2.jpg" alt="">
-    <div class="small">Market Cap</div>
-    <div class="big" id="m-c">$0,000,000.00</div>
+    <div class="centered-box">
+      <div class="word">
+        <img src="icon1.jpg" alt="">
+        <div class="small">Current Price</div>
+        <div class="big" id="c-p">$0.0000000</div>
 
-	<script>
-	// Function to Update Market Cap
+        <script>
+          // Function to update the price
+          document.addEventListener('DOMContentLoaded', function() {
+            function updatePrice() {
+              fetch("https://api.coingecko.com/api/v3/simple/price?ids=brick&vs_currencies=usd")
+                .then(response => response.json())
+                .then(data => {
+                  const price = data.brick.usd;
+
+                  const priceElement = document.getElementById('c-p');
+                  priceElement.innerText = `$${price.toFixed(7)}`;
+                })
+                .catch(error => console.error(error));
+            }
+
+            setInterval(updatePrice, 5000);
+          });
+        </script>
+      </div>
+
+      <div class="word">
+        <img src="images/icon2.jpg" alt="">
+        <div class="small">Market Cap</div>
+        <div class="big" id="m-c">$0,000,000.00</div>
+
+        <script>
+          // Function to Update Market Cap
+          document.addEventListener('DOMContentLoaded', function() {
+            function updateMarketCap() {
+              fetch("https://api.coingecko.com/api/v3/coins/brick")
+                .then(response => response.json())
+                .then(data => {
+                  const marketCap = data.market_data.market_cap.usd;
+                  const formattedMarketCap = marketCap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+                  const marketCapElement = document.getElementById('m-c');
+                  marketCapElement.innerText = `${formattedMarketCap}`;
+                })
+                .catch(error => console.error(error));
+            }
+
+            setInterval(updateMarketCap, 10000);
+          });
+        </script>
+      </div>
+
+      <div class="word">
+        <img src="icon3.jpg" alt="">
+        <div class="small">Holders</div>
+        <div class="big" id="t-h">139,402</div>
+      </div>
+
+      <div class="word">
+        <img src="icon4.jpg" alt="">
+        <div class="small">Total Supply</div>
+        <div class="big">107,207,443</div>
+      </div>
+
+      <div class="word">
+        <img src="icon5.jpg" alt="">
+        <div class="small">Brick Burned</div>
+        <div class="big">000000</div>
+      </div>
+
+      <div class="word">
+        <img src="icon6.jpg" alt="">
+        <div class="small">Distribution</div>
+        <div class="big">??D ??H ??M</div>
+      </div>
+    </div>
+
+	<div class="chart-container">
+		<canvas id="price-chart"></canvas>
+	</div>
 	
-	function updateMarketCap() {
-	fetch("https://api.coingecko.com/api/v3/coins/brick")
- 	.then(response => response.json())
-  	.then(data => {
-    	const marketCap = data.market_data.market_cap.usd;
-		const formattedMarketCap = marketCap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-
-    	const marketCapElement = document.getElementById('m-c');
-		marketCapElement.innerText = `${formattedMarketCap}`;
- 	 })
- 	 .catch(error => console.error(error));
-
-	}
-  	setInterval(updateMarketCap, 10000);
-	</script>
-  </div>
-
-  <div class="word">
-	  <img src="icon3.jpg" alt="">
-    <div class="small">Holders</div>
-    <div class="big" id="t-h">000000</div>
-
-	<script>
-		// Get total holders function
-		function updateTotalHolders() {
-		  fetch("https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0x6dcb98f460457fe4952e12779ba852f82ecc62c1")
-			.then(response => response.json())
-			.then(data => {
-			  const tokenSupply = data.result;
-			  fetch(`https://api.etherscan.io/api?
-			  module=token
-			  &action=gettokenholdercount
-			  &contractaddress=0x6dcb98f460457fe4952e12779ba852f82ecc62c1
-			  &tag=latest
-			  &apikey=3NIYNGDD7QRNU1JPFFMMQWEZ2SADKFUZY1`)
-				.then(response => response.json())
-				.then(data => {
-				  const holders = data.result;
-				  const holdersElement = document.getElementById('t-h');
-				  holdersElement.innerText = `${holders}`;
-				})
-				.catch(error => console.error(error));
-			})
-			.catch(error => console.error(error));
-		}
-		
-		setInterval(updateTotalHolders, 10000);
-	  </script>
-	  
-  </div>
-
-  <div class="word">
-	  <img src="icon4.jpg" alt="">
-    <div class="small">Total Supply</div>
-    <div class="big">107,207,443</div>
-  </div>
-
-  <div class="word">
-	  <img src="icon5.jpg" alt="">
-    <div class="small">Brick Burned</div>
-    <div class="big">000000</div>
-  </div>
-
-  <div class="word">
-	  <img src="icon6.jpg" alt="">
-    <div class="small">Distribution</div>
-    <div class="big">??D ??H ??M</div>
-  </div>
-
-</div>
-
-  <div class="chart-container">
-	<canvas id="price-chart"></canvas>
-
 	<script>
 		// Function to fetch price data for the last 7 days
 		async function fetchPriceData() {
-		  const now = new Date();
-		  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-		  const apiURL = `https://api.coingecko.com/api/v3/coins/brick/market_chart/range?vs_currency=usd&from=${sevenDaysAgo.getTime() / 1000}&to=${now.getTime() / 1000}`;
-	  
-		  try {
-			const response = await fetch(apiURL);
-			const data = await response.json();
-			const prices = data.prices;
-	  
-			const chartData = prices.map(([timestamp, price]) => ({
-			  x: new Date(timestamp),
-			  y: price
-			}));
-	  
-			// Create the chart
-			const ctx = document.getElementById('price-chart').getContext('2d');
-			new Chart(ctx, {
-			  type: 'line',
-			  data: {
-				datasets: [{
-				  label: 'Price',
-				  data: chartData,
-				  backgroundColor: 'rgba(75, 192, 192, 0.2)',
-				  borderColor: 'rgba(75, 192, 192, 1)',
-				  borderWidth: 1
-				}]
-			  },
-			  options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				scales: {
-				  x: {
-					type: 'time',
-					time: {
-					  unit: 'day',
-					  tooltipFormat: 'll'
+			const now = new Date();
+			const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+			const apiURL = `https://api.coingecko.com/api/v3/coins/brick/market_chart/range?vs_currency=usd&from=${sevenDaysAgo.getTime() / 1000}&to=${now.getTime() / 1000}`;
+	
+			try {
+				const response = await fetch(apiURL);
+				const data = await response.json();
+				const prices = data.prices;
+	
+				const chartData = prices.map(([timestamp, price]) => ({
+					x: new Date(timestamp),
+					y: price
+				}));
+	
+				// Create the chart
+				const ctx = document.getElementById('price-chart').getContext('2d');
+				new Chart(ctx, {
+					type: 'line',
+					data: {
+						datasets: [{
+							label: 'Price',
+							data: chartData,
+							backgroundColor: 'rgba(75, 192, 192, 0.2)',
+							borderColor: 'rgba(75, 192, 192, 1)',
+							borderWidth: 1
+						}]
+					},
+					options: {
+						responsive: true,
+						maintainAspectRatio: false,
+						scales: {
+							x: {
+								type: 'time',
+								time: {
+									unit: 'day',
+									tooltipFormat: 'll'
+								}
+							},
+							y: {
+								title: {
+									display: true,
+									text: 'Price (USD)'
+								}
+							}
+						}
 					}
-				  },
-				  y: {
-					title: {
-					  display: true,
-					  text: 'Price (USD)'
-					}
-				  }
-				}
-			  }
-			});
-		  } catch (error) {
-			console.error(error);
-		  }
+				});
+			} catch (error) {
+				console.error(error);
+			}
 		}
-	  
+	
 		fetchPriceData();
-	  </script>
-	  
+	</script>
+	
+
+    
   </div>
-
-
 </div>
 
-</div>
 </body>
 </html>
